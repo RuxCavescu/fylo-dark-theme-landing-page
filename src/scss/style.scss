@@ -10,6 +10,17 @@ $heading_font_size: 2.75em;
 $h2_font_size: 1.25em;
 $paragraph_font_size: 0.85em;
 $font_color: hsl(0, 0%, 100%);
+$link_color: #62e0d9;
+
+@mixin section_format {
+  display: flex;
+  flex-direction: row;
+  background-color: $dark_blue;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6em 7em;
+  color: $main_text_color;
+}
 
 body {
   margin: 0 auto;
@@ -18,17 +29,14 @@ body {
 }
 
 header {
-  display: flex;
-  flex-direction: row;
-  background-color: $dark_blue;
-  justify-content: space-between;
-  align-items: center;
-  padding: 6em 7em;
+  @include section_format();
 }
 
 nav {
   & a {
     color: $font_color;
+    text-decoration: none;
+    padding-left: 50px;
   }
 }
 
@@ -89,6 +97,30 @@ nav {
     & p {
       font-size: $paragraph_font_size;
       line-height: 1.5em;
+    }
+  }
+}
+
+.action {
+  @include section_format();
+
+  &__text {
+    color: $main_text_color;
+    text-align: start;
+
+    & a {
+      text-decoration: none;
+      color: $link_color;
+    }
+
+    &_link {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+
+      & img {
+        padding-left: 5px;
+      }
     }
   }
 }
