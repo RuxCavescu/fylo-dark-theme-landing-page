@@ -3,6 +3,7 @@
 }
 
 $dark_blue: hsl(217, 28%, 15%);
+$testimonials_color: hsl(219, 30%, 18%);
 $main_text_color: white;
 $section_padding: 6em 18em;
 $main_font_size: 1.25em;
@@ -10,7 +11,7 @@ $heading_font_size: 2.75em;
 $h2_font_size: 1.25em;
 $paragraph_font_size: 0.85em;
 $font_color: hsl(0, 0%, 100%);
-$link_color: #62e0d9;
+$link_color: hsl(176, 68%, 64%);
 
 @mixin section_format {
   display: flex;
@@ -121,6 +122,53 @@ nav {
       & img {
         padding-left: 5px;
       }
+    }
+  }
+}
+
+.testimonials {
+  @include section_format();
+
+  &__quotes {
+    margin-top: -250px;
+    margin-right: -65px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 32%;
+    background-color: $testimonials_color;
+    padding: 30px;
+    color: $font_color;
+    border-radius: 5px;
+
+    > p {
+      text-align: start;
+      font-size: 0.85em;
+      line-height: 1.5em;
+    }
+  }
+
+  &__profile {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: start;
+
+    > p {
+      text-align: start;
+      padding: 10px;
+      font-size: 0.5em;
+
+      & span {
+        font-size: 0.35em;
+      }
+    }
+
+    & img {
+      border-radius: 50%;
+      height: 50px;
     }
   }
 }
